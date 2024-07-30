@@ -23,14 +23,14 @@ reduced_dataframe = college.loc[:, ['Top10perc', 'Apps', 'Enroll']]
 
 value = pd.plotting.scatter_matrix(reduced_dataframe)
 saveBase = os.path.join(os.getcwd(), 'Chapter_2')
-saveData = os.path.join(saveBase, "CollegeScattermatrix.png")
+saveData = os.path.join(saveBase, "CollegeScattermatrix8.png")
 plt.savefig(saveData)
 plt.clf()
 
 
 # Boxplot of 'Outstate' by 'Private'
 college.boxplot(column='Outstate', by='Private')
-saveData = os.path.join(saveBase, "BoxPlot.png")
+saveData = os.path.join(saveBase, "BoxPlot8.png")
 plt.savefig(saveData)
 plt.clf()
 
@@ -39,7 +39,7 @@ college['Elite'] = pd.cut(college['Top10perc']/100, bins=[0,0.5,1], labels=['No'
 eliteColleges = college['Elite']
 
 college.boxplot(column = 'Outstate', by= 'Elite')
-saveData = os.path.join(saveBase, "EliteOutstates.png")
+saveData = os.path.join(saveBase, "EliteOutstates8.png")
 plt.savefig(saveData)
 plt.clf()
 
@@ -49,6 +49,6 @@ college.hist(column='Accept',ax=ax2)
 college.hist(column='Enroll',ax=ax3)
 college.hist(column='Top10perc',ax=ax4)
 
-saveData = os.path.join(saveBase, "subplots.png")
+saveData = os.path.join(saveBase, "subplots8.png")
 plt.savefig(saveData)
 plt.clf()
